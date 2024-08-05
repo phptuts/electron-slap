@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slap Setting</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4">Preferences</h2>
+      <form>
+        <div class="form-group">
+          <label for="profileName">Profile Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="profileName"
+            placeholder="Enter your profile name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="teamChannel">Team Channel Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="teamChannel"
+            placeholder="Enter your team channel name"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("test");
+        window.communication.message({
+          profileName: document.querySelector("#profileName").value,
+          teamChannel: document.querySelector("#teamChannel").value,
+        });
+      });
+    </script>
+  </body>
+</html>
