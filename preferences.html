@@ -42,8 +42,7 @@
       const form = document.querySelector("form");
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("test");
-        window.communication.message({
+        window.communication.setSettings({
           profileName: document.querySelector("#profileName").value,
           teamChannel: document.querySelector("#teamChannel").value,
         });
