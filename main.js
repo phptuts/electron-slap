@@ -56,7 +56,6 @@ function openPreferences(menuItem) {
 }
 
 app.whenReady().then(() => {
-  createWindow();
   const socket = io(`ws://localhost:3000/`);
   socket.on("connect", () => {
     if (!store.has("can_slap")) {
@@ -80,13 +79,7 @@ app.whenReady().then(() => {
       }
     });
   });
-
-  // This is for mac
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
-  });
+  createWindow();
 });
 
 app.on("window-all-closed", () => {
